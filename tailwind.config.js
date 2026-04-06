@@ -38,16 +38,18 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
+        // Hack&Chill Custom Colors
+        peach: "#F4A07A",
+        teal: "#00E5BE",
+        lavender: "#C9A0F5",
+        orange: "#FF6B00",
+        navy: "#0D1117",
+        "dark-card": "#161C27",
+      },
+      fontFamily: {
+        display: ['"Bebas Neue"', 'sans-serif'],
+        body: ['"DM Sans"', 'sans-serif'],
+        mono: ['"Space Mono"', 'monospace'],
       },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",
@@ -58,6 +60,8 @@ module.exports = {
       },
       boxShadow: {
         xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+        glow: "0 0 30px rgba(244, 160, 122, 0.3)",
+        "glow-teal": "0 0 30px rgba(0, 229, 190, 0.3)",
       },
       keyframes: {
         "accordion-down": {
@@ -72,11 +76,31 @@ module.exports = {
           "0%,70%,100%": { opacity: "1" },
           "20%,50%": { opacity: "0" },
         },
+        float: {
+          "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
+          "50%": { transform: "translateY(-20px) rotate(5deg)" },
+        },
+        "float-slow": {
+          "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
+          "50%": { transform: "translateY(-15px) rotate(-5deg)" },
+        },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "scroll-text": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "caret-blink": "caret-blink 1.25s ease-out infinite",
+        float: "float 4s ease-in-out infinite",
+        "float-slow": "float-slow 6s ease-in-out infinite",
+        marquee: "marquee 20s linear infinite",
+        "scroll-text": "scroll-text 30s linear infinite",
       },
     },
   },
