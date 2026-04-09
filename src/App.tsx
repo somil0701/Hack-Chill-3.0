@@ -513,7 +513,7 @@ function TimelineSection() {
             it means to build in 48 hours. No limits. No rules. Just pure creation.
           </p>
           <a
-            href="#register"
+            href="https://hackandchill--3.devfolio.co/overview"
             className="inline-block px-8 py-4 bg-peach text-navy font-bold text-lg hover:bg-peach/90 transition-colors"
           >
             REGISTER NOW
@@ -1093,7 +1093,7 @@ function RegisterSection() {
         </p>
 
         <a
-          href="https://devfolio.co"
+          href="https://hackandchill--3.devfolio.co/overview"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block mt-8 bg-navy text-white px-12 py-4 rounded-full font-bold text-lg hover:bg-navy/80 transition-colors border-2 border-teal"
@@ -1112,10 +1112,10 @@ function RegisterSection() {
 // Footer
 function Footer() {
   const socialLinks = [
-    { icon: <Camera className="w-6 h-6" />, bg: 'bg-orange', href: '#' },
-    { icon: <Briefcase className="w-6 h-6" />, bg: 'bg-teal', href: '#' },
-    { icon: <Twitter className="w-6 h-6" />, bg: 'bg-lavender', href: '#' },
-    { icon: <MessageSquare className="w-6 h-6" />, bg: 'bg-pink-400', href: '#' },
+    { icon: <Camera className="w-6 h-6" />, bg: 'bg-orange', href: 'https://www.instagram.com/hacknchill_3.0/' },
+    { icon: <Briefcase className="w-6 h-6" />, bg: 'bg-teal', href: 'https://www.linkedin.com/company/gdgadgips/' },
+    { icon: <Twitter className="w-6 h-6" />, bg: 'bg-lavender', href: 'https://x.com/GdscAdgips' },
+    { icon: <MessageSquare className="w-6 h-6" />, bg: 'bg-pink-400', href: 'mailto:info@hacknchill.com' },
   ];
 
   const quickLinks = [
