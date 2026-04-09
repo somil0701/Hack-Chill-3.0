@@ -7,27 +7,27 @@ import {
   LayoutGrid, Code2, Terminal
 } from 'lucide-react';
 
-import Photo1 from './assets/HC1/Photo1.JPG';
-import Photo2 from './assets/HC1/Photo2.JPG';
-import Photo3 from './assets/HC1/Photo3.JPG';
-import Photo4 from './assets/HC1/Photo4.JPG';
-import Photo5 from './assets/HC1/Photo5.JPG';
-import Photo6 from './assets/HC1/Photo6.JPG';
-import Photo7 from './assets/HC1/Photo7.JPG';
-import Photo8 from './assets/HC1/Photo8.JPG';
-import Photo9 from './assets/HC1/Photo9.JPG';
-import Photo10 from './assets/HC1/Photo10.JPG';
+import Photo1 from './assets/HC1/Photo1.webp';
+import Photo2 from './assets/HC1/Photo2.webp';
+import Photo3 from './assets/HC1/Photo3.webp';
+import Photo4 from './assets/HC1/Photo4.webp';
+import Photo5 from './assets/HC1/Photo5.webp';
+import Photo6 from './assets/HC1/Photo6.webp';
+import Photo7 from './assets/HC1/Photo7.webp';
+import Photo8 from './assets/HC1/Photo8.webp';
+import Photo9 from './assets/HC1/Photo9.webp';
+import Photo10 from './assets/HC1/Photo10.webp';
 
-import HC1 from './assets/HC2/Photo1.jpg';
-import HC2 from './assets/HC2/Photo2.jpg';
-import HC3 from './assets/HC2/Photo3.jpg';
-import HC4 from './assets/HC2/Photo4.jpg';
-import HC5 from './assets/HC2/Photo5.jpg';
-import HC6 from './assets/HC2/Photo6.jpg';
-import HC7 from './assets/HC2/Photo7.jpg';
-import HC8 from './assets/HC2/Photo8.jpg';
-import HC9 from './assets/HC2/Photo9.jpg';
-import HC10 from './assets/HC2/Photo10.jpg';
+import HC1 from './assets/HC2/Photo1.webp';
+import HC2 from './assets/HC2/Photo2.webp';
+import HC3 from './assets/HC2/Photo3.webp';
+import HC4 from './assets/HC2/Photo4.webp';
+import HC5 from './assets/HC2/Photo5.webp';
+import HC6 from './assets/HC2/Photo6.webp';
+import HC7 from './assets/HC2/Photo7.webp';
+import HC8 from './assets/HC2/Photo8.webp';
+import HC9 from './assets/HC2/Photo9.webp';
+import HC10 from './assets/HC2/Photo10.webp';
 
 interface CarouselSlide {
   src?: string;           // swap in real image URLs here
@@ -825,6 +825,13 @@ function EditionCarousel({ edition }: { edition: EditionConfig }) {
   const progressRef = useRef<HTMLDivElement>(null);
   const total = edition.slides.length;
 
+  useEffect(() => {
+  const nextIndex = (current + 1) % total;
+
+  const nextImg = new Image();
+  nextImg.src = edition.slides[nextIndex].src!;
+}, [current, total, edition.slides]);
+
   const resetTimer = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
 
@@ -872,6 +879,7 @@ function EditionCarousel({ edition }: { edition: EditionConfig }) {
       }}
       onMouseLeave={() => setPaused(false)}
     >
+
       {/* ── Slides ── */}
       <div
         className="flex w-full h-full transition-transform duration-500"
@@ -885,6 +893,8 @@ function EditionCarousel({ edition }: { edition: EditionConfig }) {
             {slide.src ? (
               <img
                 src={slide.src}
+                loading="lazy"
+                decoding="async"
                 alt={`${edition.label} – ${slide.placeholder ?? i + 1}`}
                 className="absolute inset-0 w-full h-full object-cover"
               />
