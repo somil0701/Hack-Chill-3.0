@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { 
-  Menu, X, Diamond, Sparkles, Eye, Star, Zap, 
-  Lock, Briefcase, MessageSquare, Camera, Twitter,
+  Menu, X, Diamond, Sparkles, Eye, Star, Zap, Briefcase, MessageSquare, Camera, Twitter,
   Users, Award, Box, CheckCircle, Brain, Bot, 
   Utensils, FileEdit, Globe, Sun,
   Heart, Asterisk, Pin, Flag, BookOpen, HelpCircle,
