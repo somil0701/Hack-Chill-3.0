@@ -825,12 +825,12 @@ function EditionCarousel({ edition }: { edition: EditionConfig }) {
   const progressRef = useRef<HTMLDivElement>(null);
   const total = edition.slides.length;
 
-  useEffect(() => {
-  const nextIndex = (current + 1) % total;
+//   useEffect(() => {
+//   const nextIndex = (current + 1) % total;
 
-  const nextImg = new Image();
-  nextImg.src = edition.slides[nextIndex].src!;
-}, [current, total, edition.slides]);
+//   const nextImg = new Image();
+//   nextImg.src = edition.slides[nextIndex].src!;
+// }, [current, total, edition.slides]);
 
   const resetTimer = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
