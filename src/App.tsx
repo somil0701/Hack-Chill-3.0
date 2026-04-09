@@ -60,6 +60,7 @@ function Navbar() {
     { name: 'HOME', href: '#hero' },
     { name: 'SCHEDULE', href: '#schedule' },
     { name: 'VENUE', href: '#about' },
+    { name: 'TEAM', href: '#team' },
     { name: 'REGISTER', href: '#register' },
   ];
 
@@ -1040,6 +1041,194 @@ function PastEditionsSection() {
 }
 
 
+// Team Section
+function TeamSection() {
+  const teamMembers = [
+    {
+      name: 'MEHAK AGARWAL',
+      role: 'PRESIDENT',
+      photo: '/team_member_1.jpeg',
+      accent: 'border-peach',
+      accentText: 'text-peach',
+      accentBg: 'bg-peach',
+      socials: 'https://www.linkedin.com/in/mehak-agarwal-605b75284/',
+    },
+    {
+      name: 'ROHIT CHOUDHARY',
+      role: 'VICE PRESIDENT',
+      photo: '/team_member_2.jpeg',
+      accent: 'border-teal',
+      accentText: 'text-teal',
+      accentBg: 'bg-teal',
+      socials: 'https://www.linkedin.com/in/rohit-choudhary786/',
+    },
+    {
+      name: 'AMAN SHARMA',
+      role: 'GENERAL SECRETARY',
+      photo: '/team_member_3.jpg',
+      accent: 'border-lavender',
+      accentText: 'text-lavender',
+      accentBg: 'bg-lavender',
+      socials: 'https://www.linkedin.com/in/aman-sharma-4a3166284/',
+    },
+    {
+      name: 'ARNAV SINGLA',
+      role: 'MANAGEMENT LEAD',
+      photo: '/team_member_4.jpeg',
+      accent: 'border-peach',
+      accentText: 'text-peach',
+      accentBg: 'bg-peach',
+      socials: 'https://www.linkedin.com/in/arnav-singla-5683432a3/',
+    },
+    {
+      name: 'SOMIL CHOUDHARY',
+      role: 'TECH LEAD',
+      photo: '/team_member_5.jpeg',
+      accent: 'border-teal',
+      accentText: 'text-teal',
+      accentBg: 'bg-teal',
+      socials: 'https://www.linkedin.com/in/somil-choudhary',
+    },
+    {
+      name: 'MRIDUL CHOUDHARY',
+      role: 'AIML LEAD',
+      photo: '/team_member_6.jpeg',
+      accent: 'border-lavender',
+      accentText: 'text-lavender',
+      accentBg: 'bg-lavender',
+      socials: 'https://www.linkedin.com/in/mridulchdry/',
+    },
+    {
+      name: 'GAUTAM SHARMA',
+      role: 'CYBERSECURITY LEAD',
+      photo: '/team_member_7.jpeg',
+      accent: 'border-peach',
+      accentText: 'text-peach',
+      accentBg: 'bg-peach',
+      socials: 'https://www.linkedin.com/in/gautam-s-3a81b0266/',
+    },
+    {
+      name: 'ABHITHA',
+      role: 'CONTENT LEAD',
+      photo: '/team_member_8.jpeg',
+      accent: 'border-teal',
+      accentText: 'text-teal',
+      accentBg: 'bg-teal',
+      socials: 'https://www.linkedin.com/in/abhitha-nandy-9066a02b7/',
+    },
+  ];
+
+  return (
+    <section id="team" className="bg-navy py-20 px-6 md:px-12 lg:px-20 relative overflow-hidden">
+      {/* Decorative Teal Star */}
+      <div className="absolute top-8 right-8 md:right-20">
+        <svg width="80" height="80" viewBox="0 0 80 80" className="fill-teal opacity-80">
+          <polygon points="40,5 50,25 75,25 55,40 65,65 40,50 15,65 25,40 5,25 30,25" />
+        </svg>
+      </div>
+
+      {/* Decorative Peach Diamond Left */}
+      <div className="absolute top-16 left-8">
+        <Diamond className="w-6 h-6 text-peach fill-peach animate-float" />
+      </div>
+
+      {/* Left Sidebar Icons */}
+      <div className="absolute left-4 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-6">
+        <Sparkles className="w-5 h-5 text-teal" />
+        <Diamond className="w-5 h-5 text-lavender fill-lavender" />
+        <Star className="w-5 h-5 text-peach fill-peach" />
+      </div>
+
+      {/* Header */}
+      <div className="mb-4 lg:ml-12">
+        <span className="text-teal font-mono text-sm tracking-[0.3em]">GDGC ADGIPS</span>
+        <h2 className="font-display text-6xl md:text-8xl lg:text-9xl text-white leading-none">
+          MEET THE
+        </h2>
+        <h2 className="font-display text-6xl md:text-8xl lg:text-9xl text-peach leading-none">
+          TEAM
+        </h2>
+      </div>
+
+      {/* Subtitle */}
+      <p className="text-white/50 font-mono text-sm tracking-[0.2em] mb-16 lg:ml-12">
+        THE MINDS BEHIND HACK&amp;CHILL 3.0
+      </p>
+
+      {/* Team Grid */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:ml-12">
+        {teamMembers.map((member, idx) => (
+          <div
+            key={idx}
+            className={`bg-dark-card border-2 ${member.accent} group hover-lift relative overflow-hidden cursor-pointer`}
+          >
+            {/* Number badge */}
+            <div className="absolute top-3 left-3 z-10">
+              <span className={`font-mono text-[10px] tracking-[0.15em] ${member.accentText} opacity-70`}>
+                {String(idx + 1).padStart(2, '0')}
+              </span>
+            </div>
+
+            {/* Social Link Badge */}
+            <a
+              href={member.socials}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`absolute top-3 right-3 z-10 w-7 h-7 ${member.accentBg} flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110`}
+              onClick={e => e.stopPropagation()}
+            >
+              <svg className="w-3.5 h-3.5 text-navy" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              </svg>
+            </a>
+
+            {/* Profile Photo */}
+            <div className="relative overflow-hidden aspect-square">
+              <img
+                src={member.photo}
+                alt={member.name}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              {/* Overlay gradient */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{ background: 'linear-gradient(to top, rgba(13,17,23,0.85) 0%, transparent 60%)' }}
+              />
+            </div>
+
+            {/* Info */}
+            <div className="p-4">
+              <h3 className={`font-display text-xl md:text-2xl ${member.accentText} leading-none tracking-wide`}>
+                {member.name}
+              </h3>
+              <p className="font-mono text-white/50 text-[10px] tracking-[0.2em] mt-1">
+                {member.role}
+              </p>
+              {/* Bottom accent bar */}
+              <div className={`mt-3 h-0.5 w-0 group-hover:w-full transition-all duration-500 ${member.accentBg}`} />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Bottom decorative row */}
+      <div className="mt-16 lg:ml-12 flex items-center gap-4">
+        <div className="h-px flex-1 bg-white/10" />
+        <span className="font-mono text-white/30 text-xs tracking-[0.3em]">GDGC ADGIPS · ORGANIZED WITH ♥</span>
+        <div className="h-px flex-1 bg-white/10" />
+      </div>
+
+      {/* Bottom Stars */}
+      <div className="absolute bottom-8 left-8">
+        <Star className="w-20 h-20 text-white/5 fill-white/5" />
+      </div>
+      <div className="absolute bottom-16 right-1/4">
+        <Diamond className="w-4 h-4 text-lavender/20 fill-lavender/20" />
+      </div>
+    </section>
+  );
+}
+
 // Register CTA Section
 function RegisterSection() {
   return (
@@ -1241,6 +1430,7 @@ function App() {
         <SponsorsSection />
         <MentorsSection />
         <PastEditionsSection />
+        <TeamSection />
         <RegisterSection />
       </main>
       <Footer />
